@@ -1,0 +1,27 @@
+{
+  "name": "whatiread",
+  "version": "0.0.1",
+  "description": "An app for tracking the books I (and others) read. ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "breynisson",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "massive": "^2.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-nodemon": "^2.0.6",
+    "jshint": "^2.9.1-rc2",
+    "jshint-stylish": "^2.1.0",
+    "wiredep": "^3.0.0"
+  }
+}
