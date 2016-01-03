@@ -46,7 +46,7 @@ gulp.task('serve', ['style', 'inject'], function () {
            'PORT': 5000
        },
        watch: jsFiles
-   }
+   };
 
     return nodemon(options)
         .on('restart', function (ev) {
