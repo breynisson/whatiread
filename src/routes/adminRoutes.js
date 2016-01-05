@@ -13,6 +13,7 @@ var books = [
             sex: 'Male',
             nationality: 'Russian'
         },
+        bookId: 656,
         read: false,
         language: 'en'
     },
@@ -24,6 +25,7 @@ var books = [
             sex: 'Male',
             nationality: 'French'
         },
+        bookId: 24280,
         read: false,
         language: 'en',
 
@@ -36,6 +38,7 @@ var books = [
             sex: 'Male',
             nationality: 'French'
         },
+        bookId: 32829,
         read: false,
         language: 'en',
 
@@ -48,6 +51,7 @@ var books = [
             sex: 'Male',
             nationality: 'American'
         },
+        bookId: 1881716,
         read: false,
         language: 'en',
 
@@ -60,6 +64,7 @@ var books = [
             sex: 'Male',
             nationality: 'Icelandic'
         },
+        bookId: 150532,
         read: false,
         language: 'is',
 
