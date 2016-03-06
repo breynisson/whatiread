@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var passport = require('passport');
 var session = require('express-session');
+//var massive = require('massive');
 
 var app = express();
 
@@ -18,8 +19,12 @@ var nav =  [{
     Text: 'Authors'
 }];
 
+//var url = 'postgres://localhost/postgres';
+//var massiveInstance = massive.connectSync({connectionString: url});
+//app.set('db', massiveInstance);
+//var db = app.get('db');
+
 var bookRouter = require('./src/routes/bookRoutes')(nav);
-var adminRouter = require('./src/routes/adminRoutes')(nav);
 var authRouter = require('./src/routes/authRoutes')(nav);
 
 app.use(express.static('public'));
@@ -36,7 +41,6 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 app.use('/Books', bookRouter);
-app.use('/Admin', adminRouter);
 app.use('/Auth', authRouter);
 
 app.get('/', function(req, res) {
@@ -56,5 +60,10 @@ app.get('/books', function(req, res) {
 });
 
 app.listen(port, function(err) {
-    console.log('running server on port: ' + port);
+    if (!err) {
+        console.log('running server on port: ' + port);
+    } else {
+        console.log(err.message);
+    }
+
 });
