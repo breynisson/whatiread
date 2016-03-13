@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Storystrap Template</title>
+    <title>LibraryApp</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- bower:css -->
@@ -20,7 +20,7 @@
     <!-- inject:js -->
     <!-- endinject -->
     <!--[if lt IE 9]>
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
     <![endif]-->
 
 </head>
@@ -60,7 +60,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h1>Storystrap
+                <h1>What I read
                     <p class="lead"></p>
                 </h1>
             </div>
@@ -103,11 +103,11 @@
                     <div class="row">
                         <br>
                         <div class="col-md-10 col-sm-9">
-                            <h3><%=books[i].title%></h3>
+                            <h3><%=books[i].booktitle%></h3>
                             <div class="row">
                                 <div class="col-xs-9">
-                                    <h4><span class="label label-default"></span><%=books[i].author.name%></h4><h4>
-                                        <small style="font-family:courier,'new courier';" class="text-muted"><a href="/books/<%=books[i]._id%>" class="text-muted">Read More</a></small>
+                                    <h4><span class="label label-default"></span></h4><h4>
+                                        <small style="font-family:courier,'new courier';" class="text-muted"><a href="/books/<%=books[i].goodreadsid%>" class="text-muted">Read More</a></small>
                                     </h4></div>
                                 <div class="col-xs-3"></div>
                             </div>

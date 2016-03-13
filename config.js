@@ -1,7 +1,7 @@
 'use strict';
 
 var gRKey = function () {
-    return 'YOUR_GOODREADS_API_KEY';
+    return '3dp0Fsp7HIcHeYnu4pKweg';
 };
 
 module.exports = gRKey;

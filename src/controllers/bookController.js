@@ -1,7 +1,6 @@
 'use strict';
 
-var mongodb = require('mongodb').MongoClient;
-var objectId = require('mongodb').ObjectID;
+var massive = require('massive');
 
 var bookController = function (bookService, nav) {
 
@@ -13,10 +12,10 @@ var bookController = function (bookService, nav) {
     };
 
     var getIndex = function (req, res) {
-        var url = 'mongodb://localhost:27017/libraryApp';
-        mongodb.connect(url, function (err, db) {
-            var collection = db.collection('books');
-            collection.find({}).toArray(function (err, results) {
+        var url = 'postgres://localhost/postgres';
+        massive.connect({connectionString:url},  function (err, db) {
+            var collection = db.books;
+            collection.find({}, function (err, results) {
                 res.render('bookListView', {
                     title: 'Books',
                     nav: nav,
@@ -27,16 +26,16 @@ var bookController = function (bookService, nav) {
     };
 
     var getById = function (req, res) {
-        var id = new objectId(req.params.id);
-        var url = 'mongodb://localhost:27017/libraryApp';
-        mongodb.connect(url, function (err, db) {
-            var collection = db.collection('books');
+        var id = req.params.id;
+        var url = 'postgres://localhost/postgres';
+        massive.connect({connectionString:url},  function (err, db) {
+            var collection = db.books;
             collection.findOne({
-                _id: id
+                goodreadsid: id
             },
             function (err, results) {
-                if (results.bookId) {
-                    bookService.getBookById(results.bookId,
+                if (results.goodreadsid) {
+                    bookService.getBookById(results.goodreadsid,
                         function (err, book) {
                             results.book = book;
                             res.render('bookView', {
