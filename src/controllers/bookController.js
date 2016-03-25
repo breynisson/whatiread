@@ -14,8 +14,8 @@ var bookController = function (bookService, nav) {
     var getIndex = function (req, res) {
         var url = 'postgres://localhost/postgres';
         massive.connect({connectionString:url},  function (err, db) {
-            var collection = db.books;
-            collection.find({}, function (err, results) {
+            db.allBooksWithAuthors({}, function (err, results) {
+                console.log(results);
                 res.render('bookListView', {
                     title: 'Books',
                     nav: nav,
