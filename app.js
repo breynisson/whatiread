@@ -26,6 +26,7 @@ var nav =  [{
 
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 var authRouter = require('./src/routes/authRoutes')(nav);
+var authorRouter = require('./src/routes/authorRoutes')(nav);
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -42,6 +43,7 @@ app.set('view engine', 'ejs');
 
 app.use('/Books', bookRouter);
 app.use('/Auth', authRouter);
+app.use('/Authors', authorRouter);
 
 app.get('/', function(req, res) {
     res.render('index', {

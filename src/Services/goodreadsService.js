@@ -12,7 +12,7 @@ var goodreadsService = function () {
 
         var options = {
             host: 'www.goodreads.com',
-            path: '/book/show/' + id + '?format=xml&key=' + goodReadsKey,
+            path: '/book/show/' + id + '?format=xml&key=' + goodReadsKey
         };
 
         var callback = function (response) {
@@ -31,8 +31,34 @@ var goodreadsService = function () {
         http.request(options, callback).end();
     };
 
+    var getAuthorById = function (id, cb) {
+
+        var goodReadsKey = require('../../config')();
+
+        var options = {
+            host: 'www.goodreads.com',
+            path: '/author/show/' + id + '?format=xml&key=' + goodReadsKey
+        };
+
+        var callback = function (response) {
+            var str = '';
+
+            response.on('data', function (chunk) {
+                str += chunk;
+            });
+            response.on('end', function () {
+                parser.parseString(str, function (err, result) {
+                    cb(null, result.GoodreadsResponse.author);
+                });
+            });
+        };
+
+        http.request(options, callback).end();
+    };
+
     return {
-        getBookById: getBookById
+        getBookById: getBookById,
+        getAuthorById: getAuthorById
     };
 };
 
