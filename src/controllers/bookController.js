@@ -10,6 +10,14 @@ var bookController = function (bookService, nav) {
         }
         next();
     };
+    
+    var addBook = function (req, res) {
+        res.render('addBookView', {
+            title: 'AddBook',
+            nav: nav,
+        });
+        
+    };
 
     var getIndex = function (req, res) {
         var url = 'postgres://localhost/postgres';
@@ -58,6 +66,7 @@ var bookController = function (bookService, nav) {
     return {
         getIndex: getIndex,
         getById: getById,
+        addBook: addBook,
         middleware: middleware
     };
 };

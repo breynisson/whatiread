@@ -13,6 +13,9 @@ var router = function (nav) {
     bookRouter.route('/')
         .get(bookController.getIndex);
 
+    bookRouter.route('/AddBook')
+        .get(bookController.addBook);
+    
     bookRouter.route('/:id')
         .get(bookController.getById);
 
