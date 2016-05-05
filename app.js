@@ -24,8 +24,6 @@ var nav =  [{
 //app.set('db', massiveInstance);
 //var db = app.get('db');
 
-//DUMMY CHECK IN FOR TRIGGERING BUILD...
-
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 var authRouter = require('./src/routes/authRoutes')(nav);
 var authorRouter = require('./src/routes/authorRoutes')(nav);
