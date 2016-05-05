@@ -69,3 +69,5 @@ app.listen(port, function(err) {
     }
 
 });
+
+module.exports.getApp = app;
