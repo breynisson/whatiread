@@ -7,8 +7,8 @@ var parser = xml2js.Parser({explicitArray: false});
 var goodreadsService = function () {
 
     var getBookById = function (id, cb) {
-
-        var goodReadsKey = require('../../config')();
+        
+        var goodReadsKey = process.env.GOODREADS_KEY;
 
         var options = {
             host: 'www.goodreads.com',
