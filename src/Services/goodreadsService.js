@@ -33,7 +33,7 @@ var goodreadsService = function () {
 
     var getAuthorById = function (id, cb) {
 
-        var goodReadsKey = require('../../config')();
+        var goodReadsKey = process.env.GOODREADS_KEY;
 
         var options = {
             host: 'www.goodreads.com',
