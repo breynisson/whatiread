@@ -7,7 +7,7 @@ var passport = require('passport');
 
 var router = function (nav) {
 
-    var authorService = require('../services/goodreadsService')();
+    var authorService = require('../Services/goodreadsService')();
 
     var authorController = require('../controllers/authorController')(authorService, nav);
 
