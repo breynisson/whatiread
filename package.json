@@ -4,6 +4,8 @@
   "description": "An app for tracking the books I (and others) read. ",
   "main": "app.js",
   "scripts": {
+    "init": "npm install",
+    "install": "bower install",
     "start": "node app.js",
     "test": "mocha ./test/test.js"
   },
