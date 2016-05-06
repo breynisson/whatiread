@@ -8,6 +8,7 @@ COPY . /var/www
 WORKDIR /var/www
 
 RUN npm install
+RUN npm install -g bower
 
 EXPOSE $PORT 5432
 
