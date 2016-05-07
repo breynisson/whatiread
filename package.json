@@ -4,8 +4,6 @@
   "description": "An app for tracking the books I (and others) read. ",
   "main": "app.js",
   "scripts": {
-    "init": "npm install",
-    "install": "bower install",
     "start": "node app.js",
     "test": "mocha ./test/test.js"
   },
@@ -27,13 +25,12 @@
     "xml2js": "^0.4.15"
   },
   "devDependencies": {
-    "bower": "^1.7.9",
     "gulp": "^3.9.0",
     "gulp-inject": "^3.0.0",
     "gulp-jscs": "^3.0.2",
     "gulp-jshint": "^2.0.0",
     "gulp-nodemon": "^2.0.6",
-    "jshint": "^2.9.1-rc2",
+    "jshint": "^2.9.2",
     "jshint-stylish": "^2.1.0",
     "wiredep": "^3.0.0"
   }
